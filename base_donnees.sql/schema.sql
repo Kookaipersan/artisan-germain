@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 10 juin 2025 à 22:21
+-- Généré le : mer. 11 juin 2025 à 11:41
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -32,11 +32,12 @@ CREATE TABLE `artisan` (
   `nom` varchar(100) NOT NULL,
   `note` float DEFAULT NULL CHECK (`note` between 0 and 5),
   `ville` varchar(100) DEFAULT NULL,
-  `a propos` text DEFAULT NULL,
+  `a_propos` text DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `site` varchar(255) DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL,
-  `specialite_id` int(11) DEFAULT NULL
+  `specialite_id` int(11) DEFAULT NULL,
+  `top` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------

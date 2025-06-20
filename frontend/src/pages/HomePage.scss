@@ -50,7 +50,7 @@
   padding: 2rem 0;
 
   .green-line {
-    width: 40px;
+    width: 100px;
     height: 4px;
     background-color: #82b864;
     margin: 0 auto 1rem;
@@ -100,5 +100,15 @@
     .artisan-note {
       color: #0074c7;
     }
+    .artisan-note {
+  font-size: 1.2rem;
+  color: #f1c40f; 
+  .note-value {
+    color: #333;
+    margin-left: 0.5rem;
+    font-weight: bold;
+  }
+}
+
   }
 }

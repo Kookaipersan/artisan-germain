@@ -15,7 +15,8 @@ app.use((err, req, res, next) => {
 
 
 // Serve static images
-app.use("/images", express.static(path.join(__dirname, "assets/images")));
+app.use("/images", express.static(path.join(__dirname, "backend/assets/images")));
+
 
 // Routes
 app.use("/api/artisans", require("./backend/routes/artisan.routes"));

@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../assets/images/logo.png";
 import "./Footer.scss";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -25,26 +26,18 @@ function Footer() {
           <div className="col-12 col-md-4 text-center mb-4 mb-md-0">
             <h5 className="fw-bold">Pages Légales</h5>
             <span className="red-line"></span>
-            <ul className="list-unstyled">
+            <ul className="footer-links">
               <li>
-                <a href="/mentions" className="footer-link">
-                  Mentions légales
-                </a>
+                <Link to="/mentions-legales">Mentions légales</Link>
               </li>
               <li>
-                <a href="/donnees" className="footer-link">
-                  Données personnelles
-                </a>
+                <Link to="/donnees-personnelles">Données personnelles</Link>
               </li>
               <li>
-                <a href="/accessibilite" className="footer-link">
-                  Accessibilité
-                </a>
+                <Link to="/accessibilite">Accessibilité</Link>
               </li>
               <li>
-                <a href="/cookies" className="footer-link">
-                  Cookies
-                </a>
+                <Link to="/cookies">Cookies</Link>
               </li>
             </ul>
           </div>

@@ -1,0 +1,44 @@
+@import "./HomePage.scss";
+
+
+.fabrication-section {
+  background-color: #f1f8fc;
+  .fabrication-title {
+    background-color: #0074c7;
+    color: white;
+    padding: 0.5rem 2rem;
+    border-radius: 8px;
+    display: inline-block;
+    font-weight: bold;
+  }
+
+  .artisan-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0.5rem 1rem rgba(0, 116, 199, 0.15);
+    }
+
+    .artisan-name {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #00497c;
+    }
+
+    .artisan-note {
+      font-size: 1.1rem;
+      color: #f1c40f;
+
+      .note-value {
+        margin-left: 0.5rem;
+        font-weight: bold;
+        color: #333;
+      }
+    }
+  }
+}

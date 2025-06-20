@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./HomePage.scss";
 
 function HomePage() {
@@ -8,14 +9,14 @@ function HomePage() {
     fetch("http://localhost:5000/api/artisans")
       .then((res) => res.json())
       .then((data) => {
-        console.log("Artisans reçus :", data);
         setArtisans(data);
       })
-      .catch((err) => console.error("Erreur de fetch :", err));
+      .catch((err) => console.error(err));
   }, []);
 
   return (
     <>
+      {/* Étapes */}
       <section className="steps-section py-5">
         <h2 className="steps-title">Comment trouver mon artisan ?</h2>
         <div className="row g-4 justify-content-center">
@@ -42,6 +43,7 @@ function HomePage() {
         </div>
       </section>
 
+      {/* Artisans du mois */}
       <section className="top-artisan-section py-5">
         <div className="text-center mb-4">
           <div className="green-line mx-auto mb-2"></div>
@@ -51,23 +53,29 @@ function HomePage() {
         <div className="row g-4">
           {artisans
             .filter((artisan) => Number(artisan.top) === 1)
-            .slice(0, 3)
-            .map((artisan) => {
-              console.log("🛠 Artisan affiché :", artisan);
-              return (
-                <div className="col-12 col-sm-6 col-md-4" key={artisan.id}>
+            .slice(0, 4) // ← 4 artisans max
+            .map((artisan) => (
+              <div className="col-12 col-sm-6 col-md-4 col-lg-3" key={artisan.id}>
+                <Link to={`/artisan/${artisan.id}`} className="text-decoration-none text-dark">
                   <div className="artisan-card p-3 h-100 text-center position-relative">
-                    {/* Favicon affiché en haut à gauche */}
-                    <img src="/assets/images/favicon.png" alt="icon" className="artisan-favicon" />
-
+                    <img
+                      src="/assets/images/favicon.png"
+                      alt="icon"
+                      className="artisan-favicon"
+                    />
                     <h5 className="artisan-name mt-4">{artisan.nom}</h5>
                     <p className="artisan-specialite">{artisan.specialite?.nom || "Spécialité non définie"}</p>
                     <p className="artisan-ville">{artisan.ville}</p>
-                    <p className="artisan-note">⭐ {artisan.note || "4.5"} / 5</p>
+                    <div className="artisan-note">
+                      {Array.from({ length: 5 }, (_, i) => (
+                        <span key={i}>{i < Math.round(artisan.note) ? "★" : "☆"}</span>
+                      ))}{" "}
+                      <span className="note-value">{artisan.note} / 5</span>
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                </Link>
+              </div>
+            ))}
         </div>
       </section>
     </>

@@ -1,0 +1,29 @@
+.artisan-page {
+  h2 {
+    font-weight: bold;
+  }
+
+  .artisan-info {
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .contact-form {
+    background: #f9f9f9;
+    border-left: 4px solid #ffa500;
+  }
+
+  .artisan-note {
+    font-size: 1.2rem;
+    color: gold;
+  }
+
+  img {
+    max-height: 200px;
+    object-fit: cover;
+  }
+
+  label {
+    font-weight: 500;
+  }
+}

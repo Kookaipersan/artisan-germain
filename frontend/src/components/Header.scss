@@ -1,0 +1,63 @@
+.search-bar {
+  width: 100%;
+  max-width: 400px;
+
+  @media (max-width: 768px) {
+    max-width: 200px;
+  }
+}
+
+.search-bar input::placeholder {
+  font-size: 1rem; // taille normale
+}
+
+@media (max-width: 768px) {
+  .search-bar input::placeholder {
+    font-size: 0.6rem; // plus petit en mode phone
+  }
+}
+.custom-navbar {
+  background-color: white !important;
+  color: #0074c7;
+
+  .navbar-brand img {
+    height: 60px;
+  }
+
+  .nav-link {
+    color: #0074c7 !important;
+    font-weight: 500;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .search-bar input {
+    background-color: #f1f8fc;
+    border: 1px solid #0074c7;
+    color: #0074c7;
+
+    &::placeholder {
+      color: #0074c7;
+    }
+  }
+
+  .search-bar button {
+    background-color: #0074c7;
+    border: none;
+    color: white;
+
+    &:hover {
+      background-color: #005fa3;
+    }
+  }
+
+  .navbar-toggler {
+    border: 1px solid #0074c7;
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%230074c7' viewBox='0 0 30 30'%3e%3cpath stroke='%230074c7' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+  }
+}

@@ -1,27 +1,23 @@
 module.exports = {
-  development: {
-    username: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-    host: process.env.DB_HOST,
-    port: 5432, 
-    dialect: 'postgres',
-    logging: false,
+  HOST: process.env.DB_HOST,
+  USER: process.env.DB_USER,
+  PASSWORD: process.env.DB_PASSWORD,
+  DB: process.env.DB_NAME,
+  DIALECT: process.env.DB_DIALECT || 'postgres',
+  PORT: process.env.DB_PORT || 5432,
+  pool: {
+    max: 5,
+    min: 0,
+    acquire: 30000,
+    idle: 10000,
   },
-
-   production: {
-    username: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-    host: process.env.DB_HOST,
-    dialect: 'postgres',
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false, // utile pour Render
-      }
-    }
-  }
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false, // obligatoire pour Render PostgreSQL
+    },
+  },
 };
+
 
 

@@ -7,7 +7,7 @@ function ArtisanPage() {
   const [artisan, setArtisan] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/artisans/${id}`)
+fetch(`https://artisan-germain-backend.onrender.com/api/artisans/${id}`)
       .then((res) => res.json())
       .then((data) => setArtisan(data))
       .catch((err) => console.error(err));
@@ -24,7 +24,8 @@ function ArtisanPage() {
             <div className="row">
               <div className="col-md-4 text-center">
                 <img
-                  src="http://localhost:5000/images/artisan.jpg"
+                  src="https://artisan-germain-backend.onrender.com/images/artisan.jpg"
+
                   alt={artisan.nom}
                   className="img-fluid rounded"
                 />

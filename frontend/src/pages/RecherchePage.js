@@ -6,7 +6,7 @@ function RecherchePage() {
   const [artisans, setArtisans] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/artisans")
+    fetch("https://artisan-germain-backend.onrender.com/api/artisans")
       .then((res) => res.json())
       .then((data) => {
         // filtre par specialite.nom

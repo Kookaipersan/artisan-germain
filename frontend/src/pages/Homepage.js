@@ -50,7 +50,7 @@ function HomePage() {
           <h2 className="top-artisans-title">Les artisans du mois les mieux notés</h2>
         </div>
 
-        <div className="row g-4">
+        <div className="row g-4 justify-content-center">
           {artisans
             .filter((artisan) => Number(artisan.top) === 1)
             .slice(0, 4) // ← 4 artisans max
